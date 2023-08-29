@@ -6,7 +6,7 @@ body {
     padding-top: 30px;
     text-align: center;
     font-family: 'Nunito', sans-serif;
-    background: url('bg.png') center/cover no-repeat; 
+    background: url('bg.png') center/cover repeat; 
     
     
 }
