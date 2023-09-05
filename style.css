@@ -40,14 +40,16 @@ body {
     transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Adiciona transições suaves */
 }
 .titulo-custom {
-    color: #b8c7e6;
+    color: #8096ad;
     font-family: 'Sofia', sans-serif;
-    transition: color 0.3s ease; 
+    transition: color 0.3s ease, font-weight 0.3s;
     cursor: pointer;
 }
 .titulo-custom:hover {
     color: #8a98b5;
+    font-weight: bold; 
 }
+
 
 .btn-primary.custom-button:hover {
     background-color: #ffb6d1; /* Cor um pouco mais clara para o hover */
