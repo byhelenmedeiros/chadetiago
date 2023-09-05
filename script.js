@@ -1,25 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const childrenField = document.getElementById('children-count-field');
-    const childrenYes = document.getElementById('children-yes');
-    const childrenNo = document.getElementById('children-no');
-    const confirmButton = document.getElementById('confirm-button');
-    const confirmationMessage = document.getElementById('confirmation-message');
+document.addEventListener("DOMContentLoaded", function () {
+    const phoneInput = document.getElementById("phone");
+    const emailInput = document.getElementById("email");
 
-    if (childrenField) {
-        childrenField.style.display = 'none';
-    }
+    phoneInput.addEventListener("input", function () {
+        const phoneNumber = this.value.replace(/\D/g, "");
 
-    childrenYes.addEventListener('change', () => {
-        childrenField.style.display = childrenYes.checked ? 'block' : 'none';
+        if (phoneNumber.length === 11 || phoneNumber.length === 10) {
+            this.setCustomValidity("");
+        } else {
+            this.setCustomValidity("Número de telefone inválido");
+        }
     });
 
-    childrenNo.addEventListener('change', () => {
-        childrenField.style.display = childrenNo.checked ? 'none' : 'block';
-    });
+    emailInput.addEventListener("input", function () {
+        const email = this.value;
 
-    confirmButton.addEventListener('click', () => {
-        const name = document.getElementById('name').value;
-        confirmationMessage.textContent = `Obrigado ${name}! Contamos com sua presença.`;
-        $('#confirmation-modal').modal('show');
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            this.setCustomValidity("");
+        } else {
+            this.setCustomValidity("E-mail inválido");
+        }
     });
 });
